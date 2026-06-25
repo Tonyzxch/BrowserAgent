@@ -1,0 +1,31 @@
+{
+  "name": "browser-agent-assistant",
+  "version": "1.0.0",
+  "description": "浏览器自主操作助手 - 通过自然语言控制浏览器完成复杂任务",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "pack": "npm run build && node scripts/pack-extension.js"
+  },
+  "dependencies": {
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.260",
+    "@types/node": "^26.0.1",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "archiver": "^6.0.1",
+    "fs-extra": "^11.3.5",
+    "sharp": "^0.35.2",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.0"
+  }
+}

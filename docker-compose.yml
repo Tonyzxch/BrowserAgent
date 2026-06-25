@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  browser-agent:
+    build: .
+    ports:
+      - "8080:80"
+    container_name: browser-agent-assistant
+    restart: unless-stopped
