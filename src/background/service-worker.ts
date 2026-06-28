@@ -4,12 +4,12 @@ import type { Task, Message } from '../types';
 // 任务存储
 const tasks = new Map<string, Task>();
 
-// 监听插件图标点击
-chrome.action.onClicked.addListener((tab) => {
-  if (tab.id) {
-    chrome.sidePanel.open({ tabId: tab.id });
-  }
-});
+// 监听插件图标点击 - 不自动打开侧边栏，因为有popup
+// chrome.action.onClicked.addListener((tab) => {
+//   if (tab.id) {
+//     chrome.sidePanel.open({ tabId: tab.id });
+//   }
+// });
 
 // 消息处理
 chrome.runtime.onMessage.addListener((message: Message, _sender, sendResponse) => {

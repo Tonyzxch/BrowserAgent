@@ -19,7 +19,12 @@ const Popup: React.FC = () => {
 
       if (response.success) {
         // 打开侧边栏查看任务执行
-        await chrome.runtime.sendMessage({ type: 'OPEN_SIDEPANEL' });
+        try {
+          await chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
+        } catch (e) {
+          // 如果打开失败，至少关闭popup
+          console.log('无法自动打开侧边栏，请手动点击侧边栏按钮');
+        }
         window.close();
       } else {
         alert('任务创建失败: ' + response.error);
