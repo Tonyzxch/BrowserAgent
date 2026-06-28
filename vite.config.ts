@@ -4,6 +4,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  base: './',  // 使用相对路径
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -24,7 +25,18 @@ export default defineConfig({
           return '[name]/[name].js';
         },
         chunkFileNames: 'chunks/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash][extname]',
+        assetFileNames: (assetInfo) => {
+          // 将CSS放到对应的目录
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            if (assetInfo.name.includes('popup')) {
+              return 'popup/[name][extname]';
+            }
+            if (assetInfo.name.includes('sidepanel')) {
+              return 'sidepanel/[name][extname]';
+            }
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
       },
     },
   },
