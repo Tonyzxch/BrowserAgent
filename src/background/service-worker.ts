@@ -61,6 +61,19 @@ async function createTask(description: string): Promise<any> {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab.id) throw new Error('无法获取当前标签页');
 
+    // 确保Content Script已注入
+    try {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: ['content/content-script.js']
+      });
+      // 等待一下让脚本初始化
+      await sleep(500);
+    } catch (e) {
+      // Content Script可能已经注入，忽略错误
+      console.log('Content script already injected or injection failed:', e);
+    }
+
     // 获取页面信息
     const pageInfoResponse = await chrome.tabs.sendMessage(tab.id, {
       type: 'GET_PAGE_INFO',
