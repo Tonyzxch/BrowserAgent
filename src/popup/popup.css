@@ -22,8 +22,7 @@ body {
 
 .popup-container {
   width: 400px;
-  min-height: 500px;
-  max-height: 600px;
+  height: 550px;
   padding: 24px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
