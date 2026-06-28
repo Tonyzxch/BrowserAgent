@@ -6,8 +6,8 @@
 
 1. **克隆项目**
 ```bash
-git clone <repository-url>
-cd browser-agent-assistant
+git clone https://github.com/Tonyzxch/BrowserAgent.git
+cd BrowserAgent
 ```
 
 2. **安装依赖并构建**

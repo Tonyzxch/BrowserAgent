@@ -36,8 +36,8 @@
 
 ```bash
 # 克隆仓库
-git clone <repository-url>
-cd browser-agent-assistant
+git clone https://github.com/Tonyzxch/BrowserAgent.git
+cd BrowserAgent
 
 # 使用docker-compose启动
 docker-compose up -d
@@ -171,17 +171,12 @@ AI根据页面信息和用户意图，生成执行步骤：
 - [ ] 添加任务导出功能
 - [ ] 支持自定义AI模型
 
-## 🤝 贡献
+## 👤 作者
 
-欢迎提交Issue和Pull Request！
-
-## 📄 许可证
-
-MIT License
-
-## 👥 作者
-
-CUA Team
+**Xucheng Zhuang**
+- 学校：Sichuan University
+- 邮箱：scuzxc660223@gmail.com
+- GitHub：[@Tonyzxch](https://github.com/Tonyzxch)
 
 ---
 
